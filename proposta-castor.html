@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Castor Utilidades | Ecossistema Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LIVE V6.0 — DESIGN TOKENS
+   ============================================================ */
+:root {
+    --live-deep: #06192a;
+    --live-glass: rgba(10, 36, 61, 0.70);
+    --live-glass-solid: #0a243d;
+    --live-glass-hover: rgba(15, 45, 75, 0.85);
+    --live-glass-hover-solid: #0f2d4b;
+    --glass-blur: blur(16px) saturate(180%);
+    --live-accent: #00e800;
+    --live-accent-dim: rgba(0, 232, 0, 0.15);
+    --live-accent-glow: rgba(0, 232, 0, 0.25);
+    --kinetic-gradient: linear-gradient(90deg, #ffffff 0%, #cccccc 50%, #00e800 100%);
+    --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-fluid: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-active: rgba(0, 232, 0, 0.4);
+    --text-white: #ffffff;
+    --text-light: #c8d6e5;
+    --text-dim: #7f8c9b;
+    --text-muted: #4a5568;
+    --surface-dark: #0d2137;
+    --surface-med: #112b42;
+    --red: #ff4d4d;
+    --orange: #ff9f43;
+    --yellow: #feca57;
+}
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--live-deep);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+/* ============================================================
+   ATMOSPHERE — Layered Background (Camadas V6.0)
+   ============================================================ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.04;
+    z-index: -2;
+    pointer-events: none;
+}
+/* Aurora Boreal (Mobile) / Ambient glow */
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 232, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 100, 200, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(0, 232, 0, 0.02) 0%, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+    animation: aurora 20s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-2%, 2%) rotate(3deg); }
+}
+/* Desktop: Flashlight effect */
+@media (hover: hover) {
+    .flashlight-layer {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        transition: background 0.3s var(--ease-fluid);
+    }
+}
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+@media (max-width: 640px) {
+    .container { padding: 0 16px; }
+}
+/* ============================================================
+   TOP ACCENT LINE
+   ============================================================ */
+.top-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--live-accent), transparent);
+    z-index: 100;
+}
+/* ============================================================
+   NAVIGATION / HEADER
+   ============================================================ */
+.site-header {
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-mark img {
+    height: 42px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(0, 232, 0, 0.2));
+}
+.logo-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+/* ============================================================
+   SECTION TABS (horizontal scroll, V6.0)
+   ============================================================ */
+.section-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 8px 0;
+    margin-bottom: 32px;
+    position: sticky;
+    top: 3px;
+    z-index: 50;
+    background: rgba(6, 25, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+.section-tabs::-webkit-scrollbar { display: none; }
+.tab-btn {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-fluid);
+    white-space: nowrap;
+}
+.tab-btn:hover, .tab-btn.active {
+    background: var(--live-accent-dim);
+    border-color: var(--border-active);
+    color: var(--live-accent);
+    transform: scale(1.02);
+}
+.tab-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s var(--spring-bounce);
+}
+/* ============================================================
+   COVER / HERO
+   ============================================================ */
+.cover {
+    padding: 80px 0 60px;
+    text-align: left;
+}
+.accent-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--live-accent);
+    border-radius: 2px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 16px rgba(0, 232, 0, 0.3);
+}
+.cover h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    background: var(--kinetic-gradient);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: kinetic-shift 6s ease-in-out infinite alternate;
+}
+@keyframes kinetic-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.cover h2 {
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 600;
+    color: var(--live-accent);
+    margin-bottom: 6px;
+}
+.cover .client-name {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+/* ============================================================
+   GLASS CARD (Core Component V6.0)
+   ============================================================ */
+.glass-card {
+    background: var(--live-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--spring-bounce);
+}
+@media (hover: hover) {
+    .glass-card:hover {
+        border-color: var(--border-active);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 232, 0, 0.08);
+    }
+}
+.glass-card.accent-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--live-accent);
+}
+/* ============================================================
+   INFO GRID (Cover card)
+   ============================================================ */
+.info-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+}
+.info-grid dt {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--live-glass-hover);
+}
+.info-grid dd {
+    font-size: 13px;
+    color: var(--text-light);
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+@media (max-width: 480px) {
+    .info-grid { grid-template-columns: 100px 1fr; }
+    .info-grid dt, .info-grid dd { font-size: 11px; padding: 8px 10px; }
+}
+/* ============================================================
+   SECTION
+   ============================================================ */
+.section {
+    padding: 48px 0 24px;
+}
+.section-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--live-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+.section h3 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+.section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--live-accent);
+    margin: 28px 0 12px;
+}
+.section p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    max-width: 72ch;
+}
+.section p.highlight {
+    color: var(--text-white);
+    font-weight: 500;
+}
+/* ============================================================
+   TABLES (Glass Style V6.0)
+   ============================================================ */
+.table-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 16px 0 24px;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+}
+.table-wrapper::-webkit-scrollbar { display: none; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 580px;
+}
+thead th {
+    background: var(--live-glass-hover);
+    color: var(--live-accent);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--live-accent);
+}
+thead th.center { text-align: center; }
+tbody tr {
+    background: var(--live-glass);
+    transition: background 0.2s var(--ease-fluid);
+}
+tbody tr:nth-child(even) {
+    background: var(--surface-dark);
+}
+@media (hover: hover) {
+    tbody tr:hover {
+        background: var(--live-glass-hover);
+    }
+}
+tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-light);
+    vertical-align: middle;
+}
+tbody td.center { text-align: center; }
+/* Status badges */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.badge.critico { background: rgba(255, 77, 77, 0.15); color: var(--red); border: 1px solid rgba(255, 77, 77, 0.3); }
+.badge.alto    { background: rgba(255, 159, 67, 0.15); color: var(--orange); border: 1px solid rgba(255, 159, 67, 0.3); }
+.badge.medio   { background: rgba(254, 202, 87, 0.15); color: var(--yellow); border: 1px solid rgba(254, 202, 87, 0.3); }
+.badge.ok      { background: var(--live-accent-dim); color: var(--live-accent); border: 1px solid var(--border-active); }
+.badge.warn    { background: rgba(255, 159, 67, 0.15); color: var(--orange); border: 1px solid rgba(255, 159, 67, 0.3); }
+/* Section label row in table */
+.section-row td {
+    background: var(--live-accent-dim) !important;
+    color: var(--live-accent);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border-active);
+}
+/* ============================================================
+   TOTAL BOX (Highlight)
+   ============================================================ */
+.total-box {
+    background: var(--live-glass-hover);
+    border: 2px solid var(--live-accent);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: 0 0 24px rgba(0, 232, 0, 0.08);
+}
+.total-box .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-white);
+}
+.total-box .value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--live-accent);
+    text-shadow: 0 0 20px rgba(0, 232, 0, 0.3);
+}
+.total-box .savings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 4px;
+}
+.total-box .savings .label {
+    font-size: 12px;
+    color: var(--text-dim);
+}
+.total-box .savings .value {
+    font-size: 18px;
+    color: var(--live-accent);
+}
+/* ============================================================
+   RECOMMENDATIONS LIST
+   ============================================================ */
+.rec-list {
+    list-style: none;
+    counter-reset: rec;
+}
+.rec-list li {
+    counter-increment: rec;
+    padding: 16px 16px 16px 52px;
+    position: relative;
+    margin-bottom: 12px;
+    background: var(--live-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-light);
+    transition: all 0.3s var(--ease-fluid);
+}
+@media (hover: hover) {
+    .rec-list li:hover {
+        border-color: var(--border-active);
+        background: var(--live-glass-hover);
+    }
+}
+.rec-list li::before {
+    content: counter(rec);
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 26px;
+    height: 26px;
+    background: var(--live-accent-dim);
+    border: 1px solid var(--border-active);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--live-accent);
+    text-align: center;
+    line-height: 26px;
+}
+.rec-list li strong {
+    color: var(--live-accent);
+    font-weight: 600;
+}
+/* ============================================================
+   TOPOLOGY TABLE LAYER LABELS
+   ============================================================ */
+.layer-label {
+    color: var(--live-accent);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+    padding: 40px 0 24px;
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 60px;
+}
+.site-footer a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+.site-footer a:hover {
+    color: var(--live-accent);
+}
+/* ============================================================
+   SEPARATOR
+   ============================================================ */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+    margin: 32px 0;
+}
+/* ============================================================
+   ANIMATIONS (staggered reveals)
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s var(--ease-fluid) forwards;
+}
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+.reveal:nth-child(1) { animation-delay: 0.05s; }
+.reveal:nth-child(2) { animation-delay: 0.1s; }
+.reveal:nth-child(3) { animation-delay: 0.15s; }
+.reveal:nth-child(4) { animation-delay: 0.2s; }
+.reveal:nth-child(5) { animation-delay: 0.25s; }
+.reveal:nth-child(6) { animation-delay: 0.3s; }
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    body { background: #fff; color: #111; }
+    body::before, body::after, .top-line, .section-tabs, .flashlight-layer { display: none; }
+    .glass-card { background: #f8f9fa; border-color: #ddd; }
+    thead th { background: #eee; color: #111; border-bottom-color: #333; }
+    tbody tr, tbody tr:nth-child(even) { background: #fff; }
+    .total-box { border-color: #333; background: #f0fdf4; }
+    .total-box .value { color: #16a34a; text-shadow: none; }
+    .badge { border: 1px solid currentColor; }
+}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<div class="flashlight-layer" id="flashlight"></div>
+<div class="container">
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo-mark">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png"
+                 alt="Live Consultoria" onerror="this.style.display='none'">
+        </div>
+        <span class="logo-text">Ecossistema Live</span>
+    </header>
+    <!-- TABS NAV -->
+    <nav class="section-tabs" role="tablist">
+        <button class="tab-btn active" onclick="scrollToSection('cover')">Capa</button>
+        <button class="tab-btn" onclick="scrollToSection('cenario')">Cenário</button>
+        <button class="tab-btn" onclick="scrollToSection('comparativo')">Comparativo</button>
+        <button class="tab-btn" onclick="scrollToSection('detalhamento')">Detalhamento</button>
+        <button class="tab-btn" onclick="scrollToSection('topologia')">Topologia</button>
+        <button class="tab-btn" onclick="scrollToSection('recomendacoes')">Recomendações</button>
+        <button class="tab-btn" onclick="scrollToSection('resumo')">Resumo</button>
+    </nav>
+    <!-- ============================================================
+         COVER
+         ============================================================ -->
+    <section class="cover" id="cover">
+        <div class="accent-bar"></div>
+        <h1 class="reveal">Proposta Comercial</h1>
+        <h2 class="reveal">Infraestrutura de Rede Estruturada</h2>
+        <p class="client-name reveal">CASTOR UTILIDADES LTDA — CASAS GOIANITA</p>
+        <div class="glass-card accent-top reveal">
+            <dl class="info-grid">
+                <dt>Cliente</dt>
+                <dd>Castor Utilidades Ltda</dd>
+                <dt>CNPJ</dt>
+                <dd>54.805.310/0001-46</dd>
+                <dt>Solicitante</dt>
+                <dd>Cléber Donato</dd>
+                <dt>Consultor</dt>
+                <dd>Ecossistema Live</dd>
+                <dt>Data</dt>
+                <dd>25/03/2026</dd>
+                <dt>Validade</dt>
+                <dd>30 dias</dd>
+            </dl>
+        </div>
+        <p class="reveal" style="max-width: 72ch;">
+            Este documento apresenta uma <strong style="color: var(--live-accent);">contraproposta otimizada</strong>
+            para a implantação de rede estruturada na loja Castor Utilidades, com foco em reduzir custos
+            mantendo a estabilidade necessária para operação do sistema Olist e atendimento aos clientes.
+        </p>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         1. ANÁLISE DO CENÁRIO ATUAL
+         ============================================================ -->
+    <section class="section" id="cenario">
+        <span class="section-number">Seção 01</span>
+        <h3>Análise do Cenário Atual</h3>
+        <p>
+            O diagnóstico técnico realizado pela PXT Tecnologia identificou
+            <strong style="color: var(--red);">7 pontos críticos</strong> na infraestrutura de rede da loja.
+            Todos são reais e impactam diretamente a operação. Abaixo, a classificação de severidade:
+        </p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Problema</th>
+                        <th class="center">Severidade</th>
+                        <th>Impacto no Olist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ausência de roteador/firewall central</td>
+                        <td class="center"><span class="badge critico">Crítico</span></td>
+                        <td>Direto — quedas e instabilidade</td>
+                    </tr>
+                    <tr>
+                        <td>Cascateamento de switches</td>
+                        <td class="center"><span class="badge critico">Crítico</span></td>
+                        <td>Direto — latência e perda de pacotes</td>
+                    </tr>
+                    <tr>
+                        <td>Ausência de rede estruturada</td>
+                        <td class="center"><span class="badge alto">Alto</span></td>
+                        <td>Indireto — tempo de parada em falhas</td>
+                    </tr>
+                    <tr>
+                        <td>Múltiplos modems sem controle</td>
+                        <td class="center"><span class="badge alto">Alto</span></td>
+                        <td>Direto — conflitos e custos extras</td>
+                    </tr>
+                    <tr>
+                        <td>Latência elevada e oscilações</td>
+                        <td class="center"><span class="badge critico">Crítico</span></td>
+                        <td>Direto — lentidão no PDV</td>
+                    </tr>
+                    <tr>
+                        <td>Risco operacional Olist/PDV</td>
+                        <td class="center"><span class="badge critico">Crítico</span></td>
+                        <td>Direto — interrupção de vendas</td>
+                    </tr>
+                    <tr>
+                        <td>Impacto visual e organizacional</td>
+                        <td class="center"><span class="badge medio">Médio</span></td>
+                        <td>Indireto — imagem profissional</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="highlight">
+            <strong>Conclusão:</strong> O diagnóstico é válido. A rede precisa de reorganização urgente.
+            A questão é: <strong style="color: var(--live-accent);">como resolver gastando menos.</strong>
+        </p>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         2. COMPARATIVO DE PROPOSTAS
+         ============================================================ -->
+    <section class="section" id="comparativo">
+        <span class="section-number">Seção 02</span>
+        <h3>Comparativo de Propostas</h3>
+        <h4>2.1 Proposta Original (PXT Tecnologia) — R$ 9.980,00</h4>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th class="center">Qtd</th>
+                        <th class="center">Unitário</th>
+                        <th class="center">Total</th>
+                        <th>Análise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>U6 Pro (AP)</td>
+                        <td class="center">2</td>
+                        <td class="center">R$ 1.460</td>
+                        <td class="center">R$ 2.920</td>
+                        <td><span class="badge warn">Superdimensionado</span></td>
+                    </tr>
+                    <tr>
+                        <td>U6+ (AP)</td>
+                        <td class="center">1</td>
+                        <td class="center">R$ 870</td>
+                        <td class="center">R$ 870</td>
+                        <td><span class="badge ok">Adequado</span></td>
+                    </tr>
+                    <tr>
+                        <td>Injetores PoE</td>
+                        <td class="center">3</td>
+                        <td class="center">—</td>
+                        <td class="center">R$ 355</td>
+                        <td><span class="badge ok">Necessário</span></td>
+                    </tr>
+                    <tr>
+                        <td>MikroTik L009</td>
+                        <td class="center">1</td>
+                        <td class="center">R$ 1.020</td>
+                        <td class="center">R$ 1.020</td>
+                        <td><span class="badge ok">Adequado</span></td>
+                    </tr>
+                    <tr>
+                        <td>Rack 4U</td>
+                        <td class="center">1</td>
+                        <td class="center">R$ 155</td>
+                        <td class="center">R$ 155</td>
+                        <td><span class="badge ok">Necessário</span></td>
+                    </tr>
+                    <tr>
+                        <td>Patch Cords</td>
+                        <td class="center">10</td>
+                        <td class="center">R$ 6</td>
+                        <td class="center">R$ 60</td>
+                        <td><span class="badge ok">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Configuração firewall/UniFi</td>
+                        <td class="center">1</td>
+                        <td class="center">—</td>
+                        <td class="center">R$ 1.750</td>
+                        <td><span class="badge warn">Negociável</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cabeamento estruturado</td>
+                        <td class="center">1</td>
+                        <td class="center">—</td>
+                        <td class="center">R$ 2.850</td>
+                        <td><span class="badge ok">Essencial</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>2.2 Proposta Otimizada — Até R$ 5.000,00</h4>
+        <p>
+            Estratégia: substituir os U6 Pro por U6+ (desempenho suficiente, custo menor),
+            negociar configuração e cabeamento, eliminar o 3º AP desnecessário.
+        </p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th class="center">Qtd</th>
+                        <th class="center">Preço Est.</th>
+                        <th class="center">Total</th>
+                        <th>Justificativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="section-row"><td colspan="5">Equipamentos</td></tr>
+                    <tr>
+                        <td>MikroTik L009</td>
+                        <td class="center">1</td>
+                        <td class="center">R$ 950</td>
+                        <td class="center">R$ 950</td>
+                        <td>Roteador central — insubstituível</td>
+                    </tr>
+                    <tr>
+                        <td>UniFi U6+</td>
+                        <td class="center">2</td>
+                        <td class="center">R$ 680</td>
+                        <td class="center">R$ 1.360</td>
+                        <td>Substitui os U6 Pro — suficiente para a loja</td>
+                    </tr>
+                    <tr>
+                        <td>Injetor PoE 802.3af</td>
+                        <td class="center">2</td>
+                        <td class="center">R$ 75</td>
+                        <td class="center">R$ 150</td>
+                        <td>Alimentação dos APs</td>
+                    </tr>
+                    <tr>
+                        <td>Rack 5U</td>
+                        <td class="center">1</td>
+                        <td class="center">R$ 170</td>
+                        <td class="center">R$ 170</td>
+                        <td>Organização central</td>
+                    </tr>
+                    <tr>
+                        <td>Patch Cords CAT5e</td>
+                        <td class="center">10</td>
+                        <td class="center">R$ 7</td>
+                        <td class="center">R$ 70</td>
+                        <td>Conexões internas do rack</td>
+                    </tr>
+                    <tr class="section-row"><td colspan="5">Serviços</td></tr>
+                    <tr>
+                        <td>Cabeamento estruturado</td>
+                        <td class="center">1</td>
+                        <td class="center">—</td>
+                        <td class="center">R$ 2.000</td>
+                        <td>Negociar com Atalho Comunicação</td>
+                    </tr>
+                    <tr>
+                        <td>Configuração MikroTik + UniFi</td>
+                        <td class="center">1</td>
+                        <td class="center">—</td>
+                        <td class="center">R$ 300</td>
+                        <td>Negociar pacote reduzido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- TOTAL BOX -->
+        <div class="total-box">
+            <span class="label">Total Estimado (Proposta Otimizada)</span>
+            <span class="value">R$ 5.000,00</span>
+            <div class="savings">
+                <span class="label">Economia vs. proposta original</span>
+                <span class="value">R$ 4.980,00 (−49,9%)</span>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         3. DETALHAMENTO DAS OTIMIZAÇÕES
+         ============================================================ -->
+    <section class="section" id="detalhamento">
+        <span class="section-number">Seção 03</span>
+        <h3>Detalhamento das Otimizações</h3>
+        <h4>3.1 Access Points: U6 Pro vs. U6+</h4>
+        <p>
+            A proposta original prevê 2 unidades do UniFi U6 Pro (R$ 1.460 cada). Para uma loja de
+            varejo com 14 computadores, a maioria cabeados, o U6 Pro está superdimensionado.
+            O U6+ oferece Wi-Fi 6 dual-band, suporta mais de 300 dispositivos simultâneos e
+            cobre até 140 m² por unidade — mais que suficiente para PDVs, coletores e rede de clientes.
+        </p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Especificação</th>
+                        <th class="center">U6 Pro</th>
+                        <th class="center">U6+</th>
+                        <th class="center">Veredito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wi-Fi</td>
+                        <td class="center">Wi-Fi 6</td>
+                        <td class="center">Wi-Fi 6</td>
+                        <td class="center"><span class="badge ok">Igual</span></td>
+                    </tr>
+                    <tr>
+                        <td>Bandas</td>
+                        <td class="center">Dual-band</td>
+                        <td class="center">Dual-band</td>
+                        <td class="center"><span class="badge ok">Igual</span></td>
+                    </tr>
+                    <tr>
+                        <td>Velocidade máxima</td>
+                        <td class="center">5.3 Gbps</td>
+                        <td class="center">3.0 Gbps</td>
+                        <td class="center"><span class="badge ok">U6+ suficiente</span></td>
+                    </tr>
+                    <tr>
+                        <td>Streams</td>
+                        <td class="center">6 (3×3)</td>
+                        <td class="center">4 (2×2)</td>
+                        <td class="center"><span class="badge ok">U6+ suficiente</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dispositivos</td>
+                        <td class="center">300+</td>
+                        <td class="center">300+</td>
+                        <td class="center"><span class="badge ok">Igual</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cobertura</td>
+                        <td class="center">~175 m²</td>
+                        <td class="center">~140 m²</td>
+                        <td class="center"><span class="badge ok">2× U6+ cobre a loja</span></td>
+                    </tr>
+                    <tr>
+                        <td>Preço (est.)</td>
+                        <td class="center">R$ 1.460</td>
+                        <td class="center">R$ 680</td>
+                        <td class="center"><span class="badge ok" style="font-size: 12px;">53% menor</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <strong style="color: var(--live-accent);">Economia neste item: R$ 1.560,00</strong>
+            (de R$ 3.790 para R$ 2.230 nos APs + injetores).
+            A loja não precisa de 6 streams — com 14 máquinas, maioria cabeadas, 2× U6+ entregam
+            o Wi-Fi necessário para os poucos dispositivos wireless e a rede de clientes.
+        </p>
+        <h4>3.2 Cabeamento Estruturado</h4>
+        <p>
+            O cabeamento é o item mais crítico e <strong style="color: var(--red);">NÃO deve ser cortado</strong>.
+            É a fundação de tudo. Porém, o valor de R$ 2.850 pode ser negociado.
+            Para 14 pontos de rede em uma loja, R$ 2.000 é uma faixa mais realista
+            se negociado diretamente com a Atalho Comunicação.
+        </p>
+        <h4>3.3 Configuração e Serviço Técnico</h4>
+        <p>
+            A proposta original cobra R$ 1.750 pela configuração do MikroTik e UniFi.
+            Com apenas 2 APs (em vez de 3) e uma topologia mais simples, esse serviço pode ser
+            negociado para R$ 300, especialmente se condicionado à contratação do monitoramento
+            mensal (R$ 300/mês).
+        </p>
+        <h4>3.4 Itens Removidos</h4>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Removido</th>
+                        <th>Motivo</th>
+                        <th class="center">Economia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3º Access Point (U6+ admin)</td>
+                        <td>Com 2× U6+ bem posicionados, a cobertura total é atingida. A área administrativa pode usar rede cabeada.</td>
+                        <td class="center">~R$ 750</td>
+                    </tr>
+                    <tr>
+                        <td>Injetores PoE+ 802.3AT (2×)</td>
+                        <td>O U6+ usa PoE padrão 802.3af, que custa menos. O PoE+ era necessário para os U6 Pro.</td>
+                        <td class="center">~R$ 130</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         4. TOPOLOGIA PROPOSTA
+         ============================================================ -->
+    <section class="section" id="topologia">
+        <span class="section-number">Seção 04</span>
+        <h3>Topologia Proposta</h3>
+        <p>A arquitetura mantém a mesma lógica da proposta original, porém mais enxuta:</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Camada</th>
+                        <th>Equipamento</th>
+                        <th>Função</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="layer-label">WAN</span></td>
+                        <td>Link 1 + Link 2 (internet)</td>
+                        <td>Dois links de internet existentes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="layer-label">CORE</span></td>
+                        <td>MikroTik L009</td>
+                        <td>Roteamento, firewall, balanceamento, VLAN, failover</td>
+                    </tr>
+                    <tr>
+                        <td><span class="layer-label">DISTRIBUIÇÃO</span></td>
+                        <td>Switch gerenciável (existente ou novo)</td>
+                        <td>Distribuição organizada no rack central</td>
+                    </tr>
+                    <tr>
+                        <td><span class="layer-label">WI-FI</span></td>
+                        <td>2× UniFi U6+</td>
+                        <td>Cobertura da área comercial + rede de clientes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="layer-label">CABEADO</span></td>
+                        <td>Rede estruturada (14 pontos)</td>
+                        <td>PDVs, caixas e estações cabeadas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <strong style="color: var(--live-accent);">Separação de redes (VLANs):</strong>
+            O MikroTik L009 permite criar VLANs para separar o tráfego da loja (PDVs/Olist),
+            administrativo (financeiro/diretoria) e clientes (Wi-Fi visitante).
+            Isso garante que o uso de internet pelos clientes não impacte a operação dos caixas.
+        </p>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         5. RECOMENDAÇÕES ESTRATÉGICAS
+         ============================================================ -->
+    <section class="section" id="recomendacoes">
+        <span class="section-number">Seção 05</span>
+        <h3>Recomendações Estratégicas</h3>
+        <ol class="rec-list">
+            <li>
+                <strong>Negociar o cabeamento:</strong> Solicite detalhamento de metragem e pontos.
+                Com 14 pontos, o valor justo fica entre R$ 1.800 e R$ 2.200. Peçam orçamento
+                de pelo menos 2 empresas.
+            </li>
+            <li>
+                <strong>Configuração do MikroTik:</strong> Condicione a configuração à contratação do
+                monitoramento mensal. Isso reduz o custo de setup e garante suporte contínuo.
+            </li>
+            <li>
+                <strong>Switch gerenciável:</strong> Verifique se a loja já possui algum switch aproveitável.
+                Se precisar comprar, um switch gerenciável Gigabit de 16 portas custa entre R$ 300 e R$ 500.
+            </li>
+            <li>
+                <strong>Compra direta dos equipamentos:</strong> Os preços do U6+ no varejo (KaBuM, Mercado Livre)
+                giram em torno de R$ 680 a R$ 750 a unidade. Comprar diretamente pode ser mais barato
+                que pelo fornecedor da proposta.
+            </li>
+            <li>
+                <strong>Monitoramento (R$ 300/mês):</strong> Considere contratar pelo menos nos primeiros 3 meses
+                após a implantação. Depois, avalie se o técnico interno consegue manter.
+            </li>
+        </ol>
+    </section>
+    <div class="divider"></div>
+    <!-- ============================================================
+         6. RESUMO EXECUTIVO
+         ============================================================ -->
+    <section class="section" id="resumo">
+        <span class="section-number">Seção 06</span>
+        <h3>Resumo Executivo</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th class="center">Proposta Original</th>
+                        <th class="center">Proposta Otimizada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Investimento único</td>
+                        <td class="center">R$ 9.980,00</td>
+                        <td class="center" style="color: var(--text-white); font-weight: 700;">R$ 5.000,00</td>
+                    </tr>
+                    <tr>
+                        <td>Access Points</td>
+                        <td class="center">2× U6 Pro + 1× U6+</td>
+                        <td class="center">2× U6+</td>
+                    </tr>
+                    <tr>
+                        <td>Roteador central</td>
+                        <td class="center">MikroTik L009</td>
+                        <td class="center">MikroTik L009</td>
+                    </tr>
+                    <tr>
+                        <td>Cabeamento</td>
+                        <td class="center">Sim (R$ 2.850)</td>
+                        <td class="center">Sim (R$ 2.000 negociado)</td>
+                    </tr>
+                    <tr>
+                        <td>Cobertura Wi-Fi</td>
+                        <td class="center">Comercial + admin</td>
+                        <td class="center">Comercial + clientes</td>
+                    </tr>
+                    <tr>
+                        <td>VLANs</td>
+                        <td class="center">Sim</td>
+                        <td class="center">Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Failover de links</td>
+                        <td class="center">Sim</td>
+                        <td class="center">Sim</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600; color: var(--text-white);">Economia</td>
+                        <td class="center">—</td>
+                        <td class="center" style="background: var(--live-accent-dim);">
+                            <strong style="color: var(--live-accent); font-size: 14px;">49,9% (R$ 4.980)</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="glass-card accent-top" style="margin-top: 32px;">
+            <p class="highlight" style="margin: 0; font-size: 15px; line-height: 1.8;">
+                A proposta otimizada resolve todos os 7 problemas identificados no diagnóstico,
+                mantém a mesma arquitetura segura (MikroTik + UniFi + cabeamento estruturado)
+                e entrega o que a loja realmente precisa:
+                <strong style="color: var(--live-accent);">estabilidade para o Olist, Wi-Fi para clientes
+                e organização da rede</strong> — tudo dentro do orçamento de R$ 5.000,00.
+            </p>
+        </div>
+        <p style="text-align: center; color: var(--text-dim); font-size: 12px; margin-top: 32px;">
+            Documento elaborado como análise consultiva pelo Ecossistema Live. Os preços são estimativas
+            baseadas em pesquisa de mercado (março/2026) e podem variar conforme fornecedor e negociação.
+        </p>
+    </section>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <a href="mailto:cleberdonato@ecossistemalive.com.br">
+            &#8450; Powered by Cléber Donato
+        </a>
+    </footer>
+</div>
+<!-- ============================================================
+     SCRIPTS — Desktop Flashlight Effect
+     ============================================================ -->
+<script>
+(function() {
+    // Flashlight effect (desktop only)
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    const fl = document.getElementById('flashlight');
+    if (!fl) return;
+    let rAF;
+    document.addEventListener('mousemove', (e) => {
+        if (rAF) cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(() => {
+            fl.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(0,232,0,0.025), transparent 60%)`;
+        });
+    });
+    // Active tab highlight on scroll
+    const sections = ['cover','cenario','comparativo','detalhamento','topologia','recomendacoes','resumo'];
+    const tabs = document.querySelectorAll('.tab-btn');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const idx = sections.indexOf(entry.target.id);
+                if (idx !== -1) {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabs[idx].classList.add('active');
+                    tabs[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+        });
+    }, { threshold: 0.3 });
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
