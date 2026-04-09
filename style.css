@@ -3,6 +3,7 @@
     --sidebar-bg: #12181f;
     --accent-emerald: #008f51;
     --accent-gold: #c5a059;
+    --accent-gold-light: #e2c47a;
     --text-main: #e2e8f0;
     --text-muted: #94a3b8;
     --card-bg: rgba(255, 255, 255, 0.03);
@@ -26,7 +27,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Sidebar */
+/* ===================== SIDEBAR ===================== */
 .sidebar {
     width: 280px;
     background-color: var(--sidebar-bg);
@@ -36,40 +37,103 @@ body {
     padding: 2.5rem 1.5rem;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .logo-container {
-    margin-bottom: 3rem;
+    margin-bottom: 1.8rem;
     text-align: center;
 }
 
 .brand-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--accent-gold);
     letter-spacing: 2px;
 }
 
 .brand-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-muted);
     letter-spacing: 4px;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
 }
 
-.nav-menu ul {
-    list-style: none;
+/* Manual da Marca CTA */
+.manual-marca-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(197,160,89,0.15) 0%, rgba(197,160,89,0.05) 100%);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: var(--accent-gold-light);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
+
+.manual-marca-btn:hover {
+    background: linear-gradient(135deg, rgba(197,160,89,0.25) 0%, rgba(197,160,89,0.1) 100%);
+    border-color: rgba(197, 160, 89, 0.7);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(197, 160, 89, 0.15);
+}
+
+.manual-marca-icon { font-size: 1rem; }
+.manual-marca-arrow { margin-left: auto; opacity: 0.6; }
+
+/* Doc Tabs */
+.doc-tabs {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.5rem 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.tab-btn:hover {
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    background: var(--accent-gold);
+    color: #0b0f13;
+}
+
+/* Nav */
+.nav-menu ul { list-style: none; }
 
 .nav-link {
     display: block;
-    padding: 0.8rem 1rem;
+    padding: 0.65rem 1rem;
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -78,13 +142,18 @@ body {
     padding-left: 1.5rem;
 }
 
-/* Content */
+.hidden { display: none; }
+
+/* ===================== CONTENT ===================== */
 .content {
     margin-left: 280px;
     flex: 1;
     padding: 4rem 6rem;
     max-width: 1200px;
 }
+
+.tab-content { display: block; }
+.tab-content.hidden { display: none; }
 
 .version-tag {
     background: var(--accent-emerald);
@@ -96,6 +165,8 @@ body {
     display: inline-block;
     margin-bottom: 1rem;
 }
+
+.camp-tag { background: #7c3aed; }
 
 .main-title {
     font-family: var(--font-serif);
@@ -124,7 +195,7 @@ body {
     padding-bottom: 1rem;
 }
 
-/* Cards */
+/* ===================== CARDS ===================== */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -139,23 +210,49 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.card h4 {
-    margin-bottom: 1rem;
-    color: var(--accent-gold);
-}
+.card h4 { margin-bottom: 1rem; color: var(--accent-gold); }
+.card p { color: var(--text-muted); line-height: 1.7; }
 
 .card ul {
-    list-style-position: inside;
+    list-style: disc;
+    padding-left: 1.2rem;
     color: var(--text-muted);
 }
 
-.card li { margin-bottom: 0.5rem; }
+.card li { margin-bottom: 0.5rem; line-height: 1.6; }
 
-.card.highlight {
-    border-left: 4px solid var(--accent-gold);
+.card.highlight { border-left: 4px solid var(--accent-gold); }
+.card.mb-4 { margin-bottom: 2rem; }
+.card.mt-4 { margin-top: 2rem; }
+
+/* Badge */
+.badge-new {
+    background: rgba(0, 143, 81, 0.2);
+    color: #4ade80;
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    vertical-align: middle;
 }
 
-/* Commission Cards */
+/* Inline link button */
+.inline-link {
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-family: var(--font-sans);
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.inline-link:hover { color: var(--accent-gold-light); }
+
+/* ===================== COMMISSIONS ===================== */
 .commission-container {
     display: flex;
     gap: 1.5rem;
@@ -173,11 +270,33 @@ body {
 
 .commission-card .label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); }
 .commission-card .value { display: block; font-size: 2.5rem; font-weight: 700; color: var(--accent-gold); margin: 0.5rem 0; }
+.commission-card p { color: var(--text-muted); font-size: 0.85rem; }
 .commission-card.tier-ouro { border-top: 4px solid #ffd700; }
 .commission-card.tier-prata { border-top: 4px solid #c0c0c0; }
 .commission-card.tier-bronze { border-top: 4px solid #cd7f32; }
 
-/* Timeline */
+/* Accelerators */
+.accelerators {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.acc-box {
+    flex: 1;
+    background: rgba(0, 143, 81, 0.08);
+    border: 1px solid rgba(0, 143, 81, 0.2);
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.acc-box strong { color: var(--accent-emerald); font-size: 0.9rem; }
+.acc-box span { color: var(--text-muted); font-size: 0.8rem; }
+
+/* ===================== TIMELINE ===================== */
 .process-timeline {
     position: relative;
     padding-left: 2rem;
@@ -193,10 +312,7 @@ body {
     background: var(--border-color);
 }
 
-.process-step {
-    position: relative;
-    margin-bottom: 3rem;
-}
+.process-step { position: relative; margin-bottom: 3rem; }
 
 .step-icon {
     position: absolute;
@@ -215,8 +331,208 @@ body {
 .step-content h4 { margin-bottom: 0.5rem; color: var(--text-main); }
 .step-content p { color: var(--text-muted); line-height: 1.6; }
 
+/* ===================== TABLES ===================== */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.result-table th {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.result-table td {
+    padding: 0.7rem 0.8rem;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.result-table tr:last-child td { border-bottom: none; }
+
+.result-table .nt { color: var(--text-muted); font-style: italic; }
+.result-table .winner { color: var(--accent-gold); font-weight: 600; }
+.result-table .prize { color: #4ade80; font-weight: 600; }
+.result-table-wide { min-width: 100%; }
+
+.prize-badge {
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.4rem;
+    font-weight: 600;
+}
+
+.badge-progress {
+    background: rgba(197, 160, 89, 0.1);
+    color: var(--accent-gold);
+    font-size: 0.7rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.4rem;
+    font-weight: 600;
+}
+
+/* ===================== SCORE FORMULA ===================== */
+.score-formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.score-weight {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.score-total .score-weight {
+    font-size: 3rem;
+    color: var(--accent-gold-light);
+}
+
+.score-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.3;
+}
+
+.score-plus {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-top: -1rem;
+}
+
+/* Premio Destaque */
+.premio-destaque {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(197,160,89,0.08) 0%, rgba(197,160,89,0.02) 100%);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.premio-icon { font-size: 2.5rem; }
+
+.premio-info h4 {
+    color: var(--accent-gold);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.premio-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===================== SUGESTOES ===================== */
+.sugestao-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sugestao-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.sugestao-item:hover {
+    border-color: rgba(197, 160, 89, 0.2);
+    background: rgba(255,255,255,0.05);
+}
+
+.sugestao-num {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgba(197, 160, 89, 0.25);
+    min-width: 2.5rem;
+    line-height: 1;
+}
+
+.sugestao-body h4 {
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.sugestao-body p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* ===================== FOOTER ===================== */
+.doc-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
-    .sidebar { width: 100%; height: auto; position: relative; }
-    .content { margin-left: 0; padding: 2rem; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo-container { margin-bottom: 0; text-align: left; }
+
+    .doc-tabs { order: 3; width: 100%; }
+    .nav-menu { order: 4; width: 100%; }
+    .manual-marca-btn { order: 2; margin-bottom: 0; }
+
+    .content {
+        margin-left: 0;
+        padding: 2rem;
+    }
+
     .main-title { font-size: 2.5rem; }
+    .commission-container { flex-direction: column; }
+    .accelerators { flex-direction: column; }
+    .score-formula { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+    .content { padding: 1.5rem; }
+    .card-grid { grid-template-columns: 1fr; }
 }

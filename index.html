@@ -3,228 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Book Goianita | Política Comercial e Operacional</title>
+    <title>Portal Interno | Casa Goianita</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
+
     <aside class="sidebar">
         <div class="logo-container">
             <h1 class="brand-title">CASA GOIANITA</h1>
             <p class="brand-subtitle">73 ANOS DE TRADIÇÃO</p>
         </div>
-        <nav class="nav-menu">
+
+        <a href="https://drive.google.com/file/d/1cniRS5Z8-UqNSRGc0EkTz-5-htSqLjon/view?usp=sharing"
+           target="_blank" class="manual-marca-btn">
+            <span class="manual-marca-icon">◈</span>
+            Manual da Marca
+            <span class="manual-marca-arrow">↗</span>
+        </a>
+
+        <div class="doc-tabs">
+            <button class="tab-btn active" data-tab="masterbook">Master Book</button>
+            <button class="tab-btn" data-tab="campanhas">Campanhas</button>
+        </div>
+
+        <nav class="nav-menu" id="nav-masterbook">
             <ul>
-                <li><a href="#titulo1" class="nav-link">Título I: Governança</a></li>
-                <li><a href="#titulo2" class="nav-link">Título II: Canais & Olist</a></li>
-                <li><a href="#titulo3" class="nav-link">Título III: Operação & VM</a></li>
-                <li><a href="#titulo4" class="nav-link">Título IV: Comissionamento</a></li>
-                <li><a href="#titulo5" class="nav-link">Título V: Serviços & Parcerias</a></li>
-                <li><a href="#titulo6" class="nav-link">Título VI: Pessoas & Compliance</a></li>
-                <li><a href="#titulo8" class="nav-link">Título VIII: Operação TO-BE</a></li>
+                <li><a href="#titulo1" class="nav-link">I · Governança</a></li>
+                <li><a href="#titulo2" class="nav-link">II · Canais & Olist</a></li>
+                <li><a href="#titulo3" class="nav-link">III · Operação & VM</a></li>
+                <li><a href="#titulo4" class="nav-link">IV · Comissionamento</a></li>
+                <li><a href="#titulo5" class="nav-link">V · Serviços</a></li>
+                <li><a href="#titulo6" class="nav-link">VI · Pessoas</a></li>
+                <li><a href="#titulo8" class="nav-link">VIII · TO-BE</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-menu hidden" id="nav-campanhas">
+            <ul>
+                <li><a href="#camp1" class="nav-link">Cota Semanal</a></li>
+                <li><a href="#camp2" class="nav-link">Premiação de Trocas</a></li>
+                <li><a href="#camp3" class="nav-link">Colaborador Destaque</a></li>
+                <li><a href="#camp4" class="nav-link">Melhor Desempenho</a></li>
+                <li><a href="#camp5" class="nav-link">Sugestões</a></li>
             </ul>
         </nav>
     </aside>
 
     <main class="content">
-        <header class="main-header">
-            <span class="version-tag">Versão 2026.02</span>
-            <h2 class="main-title">Master Book</h2>
-            <p class="main-subtitle">POLÍTICA COMERCIAL E OPERACIONAL – GRUPO GOIANITA</p>
-        </header>
 
-        <!-- TÍTULO I -->
-        <section id="titulo1" class="doc-section">
-            <h3 class="section-title">TÍTULO I: GOVERNANÇA CORPORATIVA E ESTRATÉGIA</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>1. Estrutura de Poder e Decisão</h4>
-                    <p>Hierarquia de decisão absoluta para unir tradição e inovação:</p>
-                    <ul>
-                        <li><strong>Comitê Gestor (C-Level):</strong> Único órgão com poder para alterar a Margem de Contribuição Global e aprovar investimentos de Capex.</li>
-                        <li><strong>Curadoria de Produto:</strong> Detém o Poder de Veto estético e de qualidade, independente do preço.</li>
-                        <li><strong>Gerência de Loja:</strong> Autonomia de até R$ 2.000,00 para resolução imediata de conflitos.</li>
-                        <li><strong>Comprador (Buyer):</strong> Negociador técnico com foco em "Ruptura Zero" na Curva A.</li>
-                    </ul>
-                </div>
-                <div class="card highlight">
-                    <h4>2. Ética e Integridade em Compras</h4>
-                    <ul>
-                        <li><strong>Código de Conduta:</strong> Proibição de presentes acima de R$ 100,00.</li>
-                        <li><strong>Bonificações (Enxoval):</strong> Entrada obrigatória com custo zero. Apropriação por funcionários é terminantemente proibida.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- ==================== MASTER BOOK ==================== -->
+        <div id="tab-masterbook" class="tab-content">
+            <header class="main-header">
+                <span class="version-tag">Versão 2026.02</span>
+                <h2 class="main-title">Master Book</h2>
+                <p class="main-subtitle">POLÍTICA COMERCIAL E OPERACIONAL – GRUPO GOIANITA</p>
+            </header>
 
-        <!-- TÍTULO II -->
-        <section id="titulo2" class="doc-section">
-            <h3 class="section-title">TÍTULO II: CANAIS DE VENDA E OMNICHANNEL</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>1. Integração Total (Olist)</h4>
-                    <p><em>"A Loja é o Estoque, o Site é a Vitrine"</em></p>
-                    <p>Uso obrigatório da Prateleira Infinita via tablet e tratamento diferenciado para o cliente Click & Collect.</p>
-                </div>
-                <div class="card">
-                    <h4>2. Política de Armazenagem (Hold)</h4>
-                    <ul>
-                        <li><strong>Prazo:</strong> 30 dias corridos para retirada.</li>
-                        <li><strong>Taxa:</strong> 0.5% ao dia após o 31º dia.</li>
-                        <li><strong>Abandono:</strong> Após 90 dias, o item volta ao estoque e vira carta de crédito (menos taxas).</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>3. Segmentação de Clientes</h4>
-                    <ul>
-                        <li><strong>B2C:</strong> Preço cheio, foco em experiência.</li>
-                        <li><strong>Goianita PRO (B2B):</strong> Tabela regressiva; faturamento sujeito a crédito.</li>
-                        <li><strong>Prescritores:</strong> Reserva Técnica (RT) de 5% a 7% via Nota Fiscal de Serviço.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- TÍTULO III -->
-        <section id="titulo3" class="doc-section">
-            <h3 class="section-title">TÍTULO III: OPERAÇÃO DE LOJA E VISUAL MERCHANDISING</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>1. Padrão Visual e Atmosfera</h4>
-                    <p>A regra dos 5 Sentidos: Vitrines quinzenais, Assinatura Olfativa e Playlist aprovada. Obrigatório: 2 mesas completas montadas na entrada.</p>
-                </div>
-                <div class="card">
-                    <h4>2. Prevenção de Perdas</h4>
-                    <ul>
-                        <li><strong>Auditoria de Vidros:</strong> Conferência na frente do cliente com assinatura no cupom.</li>
-                        <li><strong>Inventário Rotativo:</strong> Bipar 10% do estoque diariamente via App Olist.</li>
-                        <li><strong>Quebra Interna:</strong> 50% do custo em caso de negligência; "Perda Operacional" em acidentes.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- TÍTULO IV -->
-        <section id="titulo4" class="doc-section">
-            <h3 class="section-title">TÍTULO IV: COMISSIONAMENTO ESTRATÉGICO</h3>
-            <div class="card mb-4">
-                <h4>1. Matriz de Descontos e Alçadas</h4>
-                <p>O desconto é ferramenta de fechamento, focado em experiência.</p>
-                <ul>
-                    <li><strong>Consultor especializado:</strong> 0% de alçada.</li>
-                    <li><strong>Gerente:</strong> Até 5% (Desconto ponderado de até 10% em itens específicos se a cesta manter média de 5%).</li>
-                    <li><strong>Diretoria:</strong> Acima de 5%.</li>
-                </ul>
-            </div>
-            <div class="commission-container">
-                <div class="commission-card tier-ouro">
-                    <span class="label">OURO</span>
-                    <span class="value">3.5%</span>
-                    <p>PIX ou Débito</p>
-                </div>
-                <div class="commission-card tier-prata">
-                    <span class="label">PRATA</span>
-                    <span class="value">2.2%</span>
-                    <p>Cartão até 6x</p>
-                </div>
-                <div class="commission-card tier-bronze">
-                    <span class="label">BRONZE</span>
-                    <span class="value">1.5%</span>
-                    <p>Cartão 7x a 10x</p>
-                </div>
-            </div>
-            <div class="accelerators">
-                <div class="acc-box">
-                    <strong>Acelerador x2</strong>
-                    <span>Produtos Foco/Marca Própria</span>
-                </div>
-                <div class="acc-box">
-                    <strong>Bônus +0.5%</strong>
-                    <span>Atingimento de 100% da Meta da Loja</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- TÍTULO V -->
-        <section id="titulo5" class="doc-section">
-            <h3 class="section-title">TÍTULO V: ECOSSISTEMA DE SERVIÇOS E PARCERIAS</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>1. Lista de Casamento "Lifestyle"</h4>
-                    <p>Conversão de 100% em créditos. Bônus de 3% para listas acima de R$ 5.000,00. Taxa de conveniência de 15% em serviços.</p>
-                </div>
-                <div class="card">
-                    <h4>2. Montagem e Assistência</h4>
-                    <p>A Goianita não realiza montagem direta, mas indica parceiros. Garantia de móveis: 6 meses (90 dias legais + 90 contratuais).</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TÍTULO VI -->
-        <section id="titulo6" class="doc-section">
-            <h3 class="section-title">TÍTULO VI: GESTÃO DE PESSOAS E COMPLIANCE</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>1. Apresentação Pessoal</h4>
-                    <p>O Consultor especializado deve seguir o Dress Code obrigatório: Uniforme impecável, calçados fechados neutros e maquiagem profissional.</p>
-                </div>
-                <div class="card">
-                    <h4>2. Protocolo de Atendimento (SAC)</h4>
-                    <ul>
-                        <li><strong>Trocas:</strong> Até 30 dias para itens de linha intactos.</li>
-                        <li><strong>Restrição Sanitária:</strong> Sem troca para cama/mesa/banho com embalagem aberta.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- TÍTULO VIII -->
-        <section id="titulo8" class="doc-section">
-            <h3 class="section-title">TÍTULO VIII: PROCEDIMENTOS OPERACIONAIS (TO-BE)</h3>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-icon">💻</div>
-                    <div class="step-content">
-                        <h4>Diretoria e Modernização</h4>
-                        <p>Adoção do Dashboard de BI único, eliminando planilhas sombra para decisões auditáveis em tempo real.</p>
+            <!-- TÍTULO I -->
+            <section id="titulo1" class="doc-section">
+                <h3 class="section-title">TÍTULO I: GOVERNANÇA CORPORATIVA E ESTRATÉGIA</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>1. Estrutura de Poder e Decisão</h4>
+                        <p>Hierarquia de decisão absoluta para unir tradição e inovação:</p>
+                        <ul>
+                            <li><strong>Comitê Gestor (C-Level):</strong> Único órgão com poder para alterar a Margem de Contribuição Global e aprovar investimentos de Capex.</li>
+                            <li><strong>Curadoria de Produto:</strong> Detém o Poder de Veto estético e de qualidade, independente do preço.</li>
+                            <li><strong>Gerência de Loja:</strong> Autonomia de até <strong>R$ 2.000,00</strong> para resolução imediata de conflitos.</li>
+                            <li><strong>Comprador (Buyer):</strong> Negociador técnico com foco em "Ruptura Zero" na Curva A.</li>
+                        </ul>
+                    </div>
+                    <div class="card highlight">
+                        <h4>2. Ética e Integridade em Compras</h4>
+                        <ul>
+                            <li><strong>Código de Conduta:</strong> Proibição de presentes acima de <strong>R$ 100,00</strong>.</li>
+                            <li><strong>Bonificações (Enxoval):</strong> Entrada obrigatória com custo zero. Apropriação por funcionários é terminantemente proibida.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-icon">📦</div>
-                    <div class="step-content">
-                        <h4>Compras e Estoque</h4>
-                        <p>Incentivo à digitalização total (fim do caderno). Uso de coletores WMS e integração via XML para agilidade e redução de perdas.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">🤝</div>
-                    <div class="step-content">
-                        <h4>Lojas e Vendas</h4>
-                        <p>CRM obrigatório e fim do código 888. Estoque real-time e equipe de retaguarda para permitir foco 100% no cliente.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">💳</div>
-                    <div class="step-content">
-                        <h4>Financeiro e DP</h4>
-                        <p>Conciliação inteligente de cartões e pagamentos em lote via CNAB, eliminando o fluxo manual e moroso do "Pix por Pix".</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">🎁</div>
-                    <div class="step-content">
-                        <h4>Central de Trocas e Listas</h4>
-                        <p>Sincronização total site/loja e crédito digital atrelado ao CPF, acabando com as edições manuais e cartões de papel.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <footer class="doc-footer">
-            <p>© 2026 Grupo Goianita. Esta política revoga todas as disposições anteriores e entra em vigor em 01/02/2026.</p>
-        </footer>
+            <!-- TÍTULO II -->
+            <section id="titulo2" class="doc-section">
+                <h3 class="section-title">TÍTULO II: CANAIS DE VENDA E OMNICHANNEL</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>1. Integração Total (Olist)</h4>
+                        <p><em>"A Loja é o Estoque, o Site é a Vitrine"</em></p>
+                        <p>Uso obrigatório da Prateleira Infinita via tablet e tratamento diferenciado para o cliente Click &amp; Collect.</p>
+                    </div>
+                    <div class="card">
+                        <h4>2. Política de Armazenagem (Hold) <span class="badge-new">NOVO</span></h4>
+                        <ul>
+                            <li><strong>Prazo:</strong> 30 dias corridos para retirada.</li>
+                            <li><strong>Taxa:</strong> 0,5% ao dia após o 31º dia.</li>
+                            <li><strong>Abandono:</strong> Após 90 dias, o item volta ao estoque e vira carta de crédito (menos taxas, limitadas a 20%).</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>3. Segmentação de Clientes</h4>
+                        <ul>
+                            <li><strong>B2C:</strong> Preço cheio, foco em experiência.</li>
+                            <li><strong>Goianita PRO (B2B):</strong> Tabela regressiva; faturamento sujeito a aprovação de crédito.</li>
+                            <li><strong>Prescritores (RT):</strong> 5% a 7% de comissão via Nota Fiscal de Serviço. Proibido pagamento "por fora".</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TÍTULO III -->
+            <section id="titulo3" class="doc-section">
+                <h3 class="section-title">TÍTULO III: OPERAÇÃO DE LOJA E VISUAL MERCHANDISING</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>1. Padrão Visual e Atmosfera</h4>
+                        <p><em>A loja vende sonhos, não apenas pratos.</em></p>
+                        <ul>
+                            <li><strong>Visão:</strong> Vitrines trocadas a cada 15 dias. Iluminação focada em itens de luxo.</li>
+                            <li><strong>Olfato:</strong> Assinatura Olfativa Goianita (difusor padrão das 09h às 19h).</li>
+                            <li><strong>Audição:</strong> Playlist aprovada pelo Marketing. Rádio comercial proibido.</li>
+                            <li><strong>Mesa Posta:</strong> Mínimo 2 mesas completas montadas na entrada, trocadas semanalmente.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>2. Prevenção de Perdas e Estoque</h4>
+                        <ul>
+                            <li><strong>Auditoria de Vidros:</strong> Conferência na frente do cliente com assinatura no cupom.</li>
+                            <li><strong>Inventário Rotativo:</strong> Bipar 10% do estoque diariamente (uma categoria/dia) via App Olist.</li>
+                            <li><strong>Quebra Interna:</strong> 50% do custo em caso de negligência; "Perda Operacional" em acidentes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TÍTULO IV -->
+            <section id="titulo4" class="doc-section">
+                <h3 class="section-title">TÍTULO IV: POLÍTICA COMERCIAL E COMISSIONAMENTO ESTRATÉGICO</h3>
+                <div class="card mb-4">
+                    <h4>1. Matriz de Descontos e Alçadas</h4>
+                    <p>O desconto é ferramenta de fechamento, não direito.</p>
+                    <ul>
+                        <li><strong>Consultor de Vendas:</strong> 0% de alçada (usa parcelamento).</li>
+                        <li><strong>Gerente:</strong> Até 5% — ou até 10% em item específico se a cesta manter média de 5%.</li>
+                        <li><strong>Diretoria:</strong> Acima de 5% (grandes volumes B2B ou queima de estoque).</li>
+                    </ul>
+                </div>
+                <div class="commission-container">
+                    <div class="commission-card tier-ouro">
+                        <span class="label">OURO</span>
+                        <span class="value">3,5%</span>
+                        <p>PIX ou Débito</p>
+                    </div>
+                    <div class="commission-card tier-prata">
+                        <span class="label">PRATA</span>
+                        <span class="value">2,2%</span>
+                        <p>Cartão até 6x</p>
+                    </div>
+                    <div class="commission-card tier-bronze">
+                        <span class="label">BRONZE</span>
+                        <span class="value">1,5%</span>
+                        <p>Cartão 7x a 10x</p>
+                    </div>
+                </div>
+                <div class="accelerators">
+                    <div class="acc-box">
+                        <strong>Acelerador ×2</strong>
+                        <span>Produtos Foco / Marca Própria</span>
+                    </div>
+                    <div class="acc-box">
+                        <strong>Bônus +0,5%</strong>
+                        <span>Atingimento de 100% da Meta da Loja</span>
+                    </div>
+                </div>
+                <div class="card highlight mt-4">
+                    <h4>4. Política de Estorno</h4>
+                    <p>Devoluções ou cancelamentos geram estorno automático da comissão no mês subsequente. As regras de premiações e rankings estão detalhadas em <button class="inline-link" onclick="switchTab('campanhas')">Campanhas e Premiações →</button></p>
+                </div>
+            </section>
+
+            <!-- TÍTULO V -->
+            <section id="titulo5" class="doc-section">
+                <h3 class="section-title">TÍTULO V: ECOSSISTEMA DE SERVIÇOS E PARCERIAS</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>1. Lista de Casamento "Lifestyle"</h4>
+                        <ul>
+                            <li><strong>Créditos:</strong> 100% convertidos em créditos. Sem entrega física obrigatória.</li>
+                            <li><strong>Bônus de Meta:</strong> +3% em créditos para listas acima de R$ 5.000,00.</li>
+                            <li><strong>Marketplace:</strong> Taxa de Conveniência de 15% em serviços (Lua de Mel, Dia da Noiva).</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>2. Política de Montagem e Assistência <span class="badge-new">NOVO</span></h4>
+                        <ul>
+                            <li><strong>Montagem:</strong> A Goianita <strong>não realiza</strong> montagem diretamente. Indicamos parceiros homologados.</li>
+                            <li><strong>Garantia de Móveis:</strong> 90 dias legais + 90 dias contratuais = 6 meses contra defeitos de fabricação.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TÍTULO VI -->
+            <section id="titulo6" class="doc-section">
+                <h3 class="section-title">TÍTULO VI: GESTÃO DE PESSOAS E COMPLIANCE</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>1. Dress Code e Apresentação Pessoal</h4>
+                        <p><em>O consultor Goianita é um consultor especializado. A imagem pessoal é parte do produto.</em></p>
+                        <ul>
+                            <li><strong>Uniforme:</strong> Obrigatório, limpo e passado.</li>
+                            <li><strong>Calçados:</strong> Fechados, cor neutra (preto/nude), limpos.</li>
+                            <li><strong>Maquiagem/Unhas:</strong> Suave e profissional. Unhas limpas e cuidadas.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>2. Protocolo de Atendimento e Devoluções (SAC)</h4>
+                        <ul>
+                            <li><strong>Trocas:</strong> Aceitas em até 30 dias para itens de linha (intactos).</li>
+                            <li><strong>Restrição Sanitária <span class="badge-new">NOVO</span>:</strong> Sem troca/devolução de cama, mesa e banho com embalagem aberta.</li>
+                            <li><strong>Escalada:</strong> Vendedor → Gerente → Ouvidoria.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TÍTULO VIII -->
+            <section id="titulo8" class="doc-section">
+                <h3 class="section-title">TÍTULO VIII: PROCEDIMENTOS OPERACIONAIS POR FUNÇÃO (TO-BE)</h3>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-icon">💻</div>
+                        <div class="step-content">
+                            <h4>Diretoria e Modernização Analítica</h4>
+                            <p>Abandono de planilhas "sombra" em favor do Dashboard de BI único — decisões baseadas em dados auditáveis e em tempo real, eliminando divergências entre sócios e gerência.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">📦</div>
+                        <div class="step-content">
+                            <h4>Compras e Estoque</h4>
+                            <p>Digitalização total das requisições (fim do caderno). Uso de coletor WMS: avarias registradas imediatamente permitem disponibilidade no mesmo dia, reduzindo capital parado.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">🤝</div>
+                        <div class="step-content">
+                            <h4>Lojas e Consultoria de Vendas</h4>
+                            <p>CRM obrigatório (fim do código 888). Estoque real-time e equipe de retaguarda para embalagem, garantindo 100% do tempo do consultor focado no cliente.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">💳</div>
+                        <div class="step-content">
+                            <h4>Financeiro e Departamento Pessoal</h4>
+                            <p>Conciliação inteligente de cartões e pagamentos em lote via CNAB (CNAB substitui o "Pix por Pix"), liberando a equipe para análise de fluxo de caixa.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">🎁</div>
+                        <div class="step-content">
+                            <h4>Central de Trocas e Listas de Presentes</h4>
+                            <p>Sincronização total site/loja. Crédito digital atrelado ao CPF — fim das edições manuais de estoque e dos cartões de papel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="doc-footer">
+                <p>© 2026 Grupo Goianita · Versão 2026.02 (Rev. Benchmarking) · Documento Confidencial e Normativo</p>
+                <p>Esta política revoga todas as disposições anteriores e entra em vigor em 01/02/2026.</p>
+            </footer>
+        </div>
+
+        <!-- ==================== CAMPANHAS ==================== -->
+        <div id="tab-campanhas" class="tab-content hidden">
+            <header class="main-header">
+                <span class="version-tag camp-tag">Março 2026</span>
+                <h2 class="main-title">Campanhas de Incentivo</h2>
+                <p class="main-subtitle">PREMIAÇÕES E INCENTIVOS – GRUPO GOIANITA</p>
+            </header>
+
+            <!-- Cota Semanal -->
+            <section id="camp1" class="doc-section">
+                <h3 class="section-title">1. PREMIAÇÕES SEMANAIS (INCENTIVO DE COTA)</h3>
+                <div class="card-grid">
+                    <div class="card highlight">
+                        <h4>Regra</h4>
+                        <ul>
+                            <li><strong>Prêmio:</strong> Brindes diversos para vendedores que atingirem a cota semanal.</li>
+                            <li><strong>Entrega:</strong> Sorteio semanal entre os que bateram a meta.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Resultados — Março/2026</h4>
+                        <table class="result-table">
+                            <thead>
+                                <tr><th>Loja</th><th>Destaque</th><th>Obs.</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Av. 85</td><td><strong>Maria</strong></td><td>4× batedora de cota</td></tr>
+                                <tr><td>T4</td><td class="nt">—</td><td>Nenhum atingimento</td></tr>
+                                <tr><td>135</td><td><strong>Sirlene</strong></td><td>1× batedora de cota</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trocas -->
+            <section id="camp2" class="doc-section">
+                <h3 class="section-title">2. PREMIAÇÃO DE TROCAS (EFICIÊNCIA OPERACIONAL)</h3>
+                <div class="card-grid">
+                    <div class="card highlight">
+                        <h4>Regra</h4>
+                        <ul>
+                            <li><strong>Av. 85 e T4:</strong> 1% de comissão para o vendedor com mais trocas no mês.</li>
+                            <li><strong>Loja 135:</strong> 0,5% de comissão para o vendedor com mais trocas no mês.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Resultados — Março/2026</h4>
+                        <table class="result-table">
+                            <thead>
+                                <tr><th>Loja</th><th>Destaque</th><th>Prêmio</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Av. 85</td><td class="nt">—</td><td>NT</td></tr>
+                                <tr><td>T4</td><td class="nt">—</td><td>NT</td></tr>
+                                <tr><td>135</td><td><strong>Sirlene</strong></td><td class="prize">R$ 16,00</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colaborador Destaque -->
+            <section id="camp3" class="doc-section">
+                <h3 class="section-title">3. COLABORADOR DESTAQUE (ORGANIZAÇÃO E LOGÍSTICA)</h3>
+                <div class="card-grid">
+                    <div class="card highlight">
+                        <h4>Regra</h4>
+                        <ul>
+                            <li><strong>Prêmio:</strong> R$ 100,00 para o colaborador eleito.</li>
+                            <li><strong>Critério:</strong> Avaliação qualitativa em organização, limpeza e apoio logístico.</li>
+                            <li><strong>Periodicidade Av. 85 e T4:</strong> Trimestral.</li>
+                            <li><strong>Periodicidade Loja 135:</strong> Semestral.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Destaques 2026 — 1º Trimestre (Jan–Mar)</h4>
+                        <table class="result-table">
+                            <thead>
+                                <tr><th>Loja</th><th>Jan/Fev</th><th>Mar</th><th>Vencedor Trimestre</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Av. 85</td>
+                                    <td>Batista</td>
+                                    <td>Valdeon</td>
+                                    <td class="winner">Batista <span class="prize-badge">R$ 100</span></td>
+                                </tr>
+                                <tr>
+                                    <td>T4</td>
+                                    <td>Equipe</td>
+                                    <td>Equipe</td>
+                                    <td class="winner">Equipe <span class="prize-badge">R$ 100</span></td>
+                                </tr>
+                                <tr>
+                                    <td>135</td>
+                                    <td>A. Paula</td>
+                                    <td>A. Paula</td>
+                                    <td class="winner">A. Paula <span class="badge-progress">Em curso</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Melhor Desempenho -->
+            <section id="camp4" class="doc-section">
+                <h3 class="section-title">4. MELHOR DESEMPENHO EM VENDAS (RANKING DE PERFORMANCE)</h3>
+                <div class="card mb-4">
+                    <h4>Regra de Pontuação</h4>
+                    <div class="score-formula">
+                        <div class="score-item">
+                            <span class="score-weight">9</span>
+                            <span class="score-label">Performance de Vendas</span>
+                        </div>
+                        <span class="score-plus">+</span>
+                        <div class="score-item">
+                            <span class="score-weight">1</span>
+                            <span class="score-label">Avaliação do Gerente</span>
+                        </div>
+                        <span class="score-plus">=</span>
+                        <div class="score-item score-total">
+                            <span class="score-weight">10</span>
+                            <span class="score-label">Nota Final</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="premio-destaque">
+                    <div class="premio-icon">🏆</div>
+                    <div class="premio-info">
+                        <h4>Grand Prix Semestral (Av. 85 e T4) / Anual (135)</h4>
+                        <p>Hospedagem no <strong>Hotel Recanto das Águas Quentes</strong> + <strong>R$ 200,00</strong> para despesas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Histórico de Vencedores Mensais — 2026</h4>
+                    <table class="result-table result-table-wide">
+                        <thead>
+                            <tr><th>Loja</th><th>Janeiro</th><th>Fevereiro</th><th>Março</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Av. 85</td>
+                                <td>Maycon</td>
+                                <td>Thalliton</td>
+                                <td class="winner">Maria</td>
+                            </tr>
+                            <tr>
+                                <td>T4</td>
+                                <td>Joyce e Elaine <small>(empate)</small></td>
+                                <td>Elaine</td>
+                                <td class="winner">Pedro</td>
+                            </tr>
+                            <tr>
+                                <td>135</td>
+                                <td>Sirlene</td>
+                                <td>Sirlene</td>
+                                <td class="winner">Sirlene</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sugestões -->
+            <section id="camp5" class="doc-section">
+                <h3 class="section-title">SUGESTÕES DE MELHORIA (EM ANÁLISE)</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Com base nos resultados de Março/2026, as seguintes evoluções na regra foram propostas:</p>
+                <div class="sugestao-list">
+                    <div class="sugestao-item">
+                        <span class="sugestao-num">01</span>
+                        <div class="sugestao-body">
+                            <h4>Mérito sobre Sorte (Semanal)</h4>
+                            <p>Substituir o sorteio por recompensas fixas (ex: vouchers ou folga) para <em>todos</em> que baterem a cota, aumentando a percepção de justiça.</p>
+                        </div>
+                    </div>
+                    <div class="sugestao-item">
+                        <span class="sugestao-num">02</span>
+                        <div class="sugestao-body">
+                            <h4>Troca em Venda (Upsell)</h4>
+                            <p>Alterar o foco da comissão de troca simples para o valor de <em>Upsell</em> (venda adicional) realizado durante o processo de troca.</p>
+                        </div>
+                    </div>
+                    <div class="sugestao-item">
+                        <span class="sugestao-num">03</span>
+                        <div class="sugestao-body">
+                            <h4>Redução de Ciclos</h4>
+                            <p>Reduzir o prazo de "Colaborador Destaque" para mensal — ou aumentar o valor do prêmio trimestral para manter engajamento.</p>
+                        </div>
+                    </div>
+                    <div class="sugestao-item">
+                        <span class="sugestao-num">04</span>
+                        <div class="sugestao-body">
+                            <h4>Objetividade no Ranking</h4>
+                            <p>Definir critérios claros para o "Ponto do Gerente" no Melhor Desempenho em Vendas (uso de CRM, pontualidade, padrão de atendimento).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="doc-footer">
+                <p>© 2026 Grupo Goianita · Referência: Março/2026 · Documento Interno</p>
+            </footer>
+        </div>
+
     </main>
 
     <script src="script.js"></script>
